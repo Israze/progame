@@ -44,3 +44,5 @@ document.addEventListener('click', function(event) {
 document.getElementById('project-button').addEventListener('click', function() {
     window.location.href = 'projects.html';
   });
+
+  console.log("bitch")
