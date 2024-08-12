@@ -1,0 +1,558 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.section {
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #45ED9C;
+  width: 44%;
+  position: fixed;
+  border-radius: 32px;
+}
+
+
+.nav-link.hidden {
+  color: #45ED9C;
+}
+
+/* From Uiverse.io by Subu19 */ 
+.hamburger {
+  height: 35px;
+  width: 35px;
+  margin-right: 40px;
+  position: relative;
+  z-index: 2; /* Ensure the hamburger icon is above the nav menu */
+}
+
+/* Hidden and inactive hamburger menu */
+.hamburger.inactive {
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+
+
+
+.hamburger .checkbox {
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  z-index: 3; /* Ensure checkbox stays on top for interaction */
+}
+
+.line {
+  transition: 0.5s;
+  stroke-width: 3px;
+  stroke: black;
+  z-index: 2;
+}
+
+.lineTop {
+  stroke-dasharray: 40 40;
+  stroke-dashoffset: 25;
+}
+
+.lineBottom {
+  stroke-dasharray: 40 40;
+  stroke-dashoffset: 60;
+}
+
+.lineMid {
+  stroke-dasharray: 40 40;
+}
+
+.hamburger .checkbox:checked + svg .line {
+  stroke: #000000;
+}
+
+.hamburger .checkbox:checked + svg .lineTop {
+  stroke-dashoffset: 0;
+  transform-origin: left;
+  transform: rotateZ(45deg) translate(-7px, -5px);
+}
+
+.hamburger .checkbox:checked + svg .lineMid {
+  stroke-dashoffset: 40;
+}
+
+.hamburger .checkbox:checked + svg .lineBottom {
+  stroke-dashoffset: 0;
+  transform-origin: left;
+  transform: rotateZ(-45deg) translate(-5px, 5px);
+}
+
+
+.nav-menu {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  justify-content: space-between;
+  margin-top: -77px;
+  margin-left: -175px;
+  width: 250px; 
+  height: 300px;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  transition: opacity 0.5s ease, max-height 0.5s ease, padding 0.5s ease; 
+  background: linear-gradient(143deg, white 12% , black 51%);
+
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-menu li {
+  margin-bottom: 60px;  
+}
+
+.nav-menu a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+ 
+  
+}
+
+
+.hamburger .checkbox:checked ~ .nav-menu {
+  opacity: 1; 
+  max-height: 300px; 
+  padding: 50px; 
+}
+
+
+.header-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.center-header {
+  display: flex;
+  justify-content: center;
+  
+}
+
+ul {
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+
+
+#section1 {
+  background-color: black;
+  color: white;
+}
+
+.intro {
+  display: flex;
+  align-items: center;  
+  justify-content: start;
+  margin-top: 100px;
+  margin-left: 150px;
+  height: 75%;
+  font-size: 40px;
+  word-spacing: 8px;
+}
+
+.begging {
+  color: #45ED9C;
+}
+
+#section2 {
+  background-color: rgb(0, 0, 0);
+}
+
+.main-intro {
+  display: flex;
+  align-items: center;
+  margin-right: 200px;
+  margin-left: 120px;
+}
+
+.wording {
+  display: flex;
+  flex-direction: column;
+  align-items:star ;
+  margin-left: 20px;
+}
+
+.name {
+  display: flex;
+  align-items:center;
+  color: white;
+  font-size: 45px;
+}
+
+.description {
+  color: white;
+  margin-top: 25px;
+  margin-bottom:15px;
+  font-size: 25px;
+  font-weight: bold;
+  word-spacing: 5px;
+  width: 45%;
+
+  .read-more{
+    color: #45ED9C;
+    text-decoration: none;
+  }
+}
+
+
+.role {
+  color: #45ED9C;
+}
+
+.contact-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 27px;
+  font-weight: 60;
+  color: white;
+  margin-top: 13px;
+  padding-left: 11px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 30px;
+  background-color: black;
+  border-color: #45ED9C;
+}
+
+.picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.profile-pic {
+  width: 300px;
+  background-color: gray;
+  border-radius: 300px;
+}
+
+#section3 {
+  background-color: rgb(0, 0, 0);
+}
+
+.filler{
+  display: block;
+  margin-bottom: 150px;
+}
+.third-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.custom-vertical{
+  width: 2px;
+  height: 85%px;
+  border: none;
+  background-color:#45ED9C;
+}
+.proof-text {
+  font-size: 90px;
+  
+  margin-bottom: 0;
+  color: #45ED9C;
+}
+
+.desc {
+  font-size: 30px;
+  color: white;
+  margin-top: 0;
+}
+
+.show-work-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 27px;
+  font-weight: 60;
+  color: white;
+  margin-top: 13px;
+  padding-left: 11px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 30px;
+  background-color: black;
+  border-color: #45ED9C;
+}
+
+.separator {
+  width: 2px;
+  background-color: #45ED9C;
+  height: 80%;
+}
+
+.reach-out-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 27px;
+  font-weight: 60;
+  color: white;
+  margin-top: 13px;
+  padding-left: 11px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 30px;
+  background-color: black;
+  border-color: #45ED9C;
+}
+
+.arrow{
+  margin-left: 17px;
+  font-size: 40px;
+  font-weight: lighter;
+}
+
+.reach-text {
+  font-size: 90px;
+  margin-bottom: 0;
+  color: #45ED9C;
+}
+
+.reach-desc {
+  color: white;
+  font-size: 30px;
+  margin-top: 0;
+}
+
+#section4 {
+  background-color: #45ED9C;
+}
+
+.footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  height: 70%;
+}
+
+li{
+  text-decoration: none;
+  list-style: none;
+}
+
+.contact-list{
+  display: flex;
+  flex-direction: column;
+
+  .reach-anchor{
+    text-decoration: none;
+    color: #575757;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .anchor{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+}
+
+.resume-footer{
+  display: flex;
+  flex-direction: column;
+
+  .anchor{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+
+.custom-line{
+  width: 85%;
+  margin-left: 7.5%;
+  height: 2px;
+  border: none;
+  background-color: black;
+}
+
+.handles{
+  display:flex;
+  justify-content: space-around;
+  height: 29%;
+  align-items: center;
+}
+
+.handle-social{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 22px;
+  margin-left: 10px;
+}
+
+.my-name{
+  font-size: 22px;
+  color: black;
+}
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+  header {
+    width: 100%;
+    height: 60px; /* Adjust header height for smaller screens */
+    margin: 0;
+    border-radius: 0; /* Remove border radius for smaller screens */
+  }
+
+  .hamburger {
+    margin-right: 20px; /* Adjust margin for smaller screens */
+  }
+
+  .nav-menu {
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Adjust height */
+    margin-left: 0; /* Reset margin */
+    padding: 20px; /* Adjust padding */
+    position: fixed; /* Fix position for mobile */
+    top: 60px; /* Position below header */
+    left: 0;
+    right: 0;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: center; /* Center align for mobile */
+  }
+
+  .nav-menu li {
+    margin-bottom: 20px; /* Adjust spacing */
+  }
+
+  .nav-menu a {
+    font-size: 18px; /* Smaller font size */
+  }
+
+  .intro {
+    margin: 20px;
+    font-size: 30px; /* Adjust font size for mobile */
+  }
+
+  .main-intro {
+    flex-direction: column;
+    align-items: center; /* Center content for mobile */
+  }
+
+  .wording {
+    margin-left: 0; /* Reset margin */
+    text-align: center; /* Center align text */
+  }
+
+  .name {
+    font-size: 35px; /* Adjust font size for mobile */
+  }
+
+  .description {
+    font-size: 20px; /* Adjust font size for mobile */
+    text-align: left;
+    width: 100%;
+  }
+  .read-more{
+    display: block;
+  }
+
+  .contact-button,
+  .show-work-button,
+  .reach-out-button {
+    font-size: 22px; /* Adjust button font size */
+    padding: 10px 20px; /* Adjust padding */
+  }
+
+  .profile-pic {
+    width: 200px; /* Adjust profile pic size */
+  }
+
+  .proof-text {
+    font-size: 60px; /* Adjust font size */
+  }
+
+  .desc {
+    font-size: 20px; /* Adjust font size */
+  }
+
+  .separator {
+    height: 50%; /* Adjust separator height */
+  }
+
+  .reach-text {
+    font-size: 60px; /* Adjust font size */
+  }
+
+  .reach-desc {
+    font-size: 20px; /* Adjust font size */
+  }
+
+  .footer {
+    width: 100%; /* Full width for mobile */
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .custom-line {
+    width: 90%; /* Adjust line width */
+    margin-left: 5%; /* Center align */
+  }
+
+  .handles {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .handle-social {
+    font-size: 18px; /* Adjust font size */
+    margin: 5px 0; /* Adjust margin */
+  }
+}
