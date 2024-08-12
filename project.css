@@ -14,7 +14,7 @@ body{
     display: flex;
     flex-direction: column;
     height: 30vh;
-    
+    margin-top: 150px;
     align-items: flex-start;
     color:#45ED9C;
     font-size: 50px;
@@ -48,4 +48,15 @@ body{
     /* filter: blur(5px); */
 }
 
-/* testing */
+@media (max-width: 480px){
+
+  .project{
+    font-size:40px;
+  }
+  .boxes{
+    border: 9px solid;
+    border-color: #45ED9C;
+  }
+
+
+}
