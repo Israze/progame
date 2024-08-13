@@ -1,6 +1,6 @@
 html, body {
   margin: 0;
-  padding: 0;
+  
   background-color: black;
   scroll-behavior: smooth;
 }
@@ -13,17 +13,18 @@ html, body {
 
 
 .section {
-  height: 100vh;
+  min-height: 100vh;
+  padding-left:2rem;
+  padding-right: 2rem;
 }
 
 header {
   display: flex;
-  height: 80px;
+  min-height: 80px;
   justify-content: space-between;
   align-items: center;
   margin-top: 40px;
   background-color: #45ED9C;
-  width: 44%;
   position: fixed;
   border-radius: 32px;
 }
@@ -34,14 +35,14 @@ header {
 }
 
 
+/* Hamburger Button */
 .hamburger {
+  position: relative;
+  z-index: 2;
   height: 35px;
   width: 35px;
   margin-right: 40px;
-  position: relative;
-  z-index: 2;
 }
-
 
 .hamburger.inactive {
   visibility: hidden;
@@ -49,46 +50,41 @@ header {
   transition: opacity 0.5s ease;
 }
 
-
-
-
+/* Hidden Checkbox for Interaction */
 .hamburger .checkbox {
   position: absolute;
-  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: 3;
   height: 100%;
   width: 100%;
+  opacity: 0;
   cursor: pointer;
-  z-index: 3;  }
+}
 
+/* SVG Lines for Hamburger */
 .line {
-  transition: 0.5s;
   stroke-width: 3px;
   stroke: black;
-  z-index: 2;
+  stroke-dasharray: 40 40;
+  transition: transform 0.5s ease, stroke-dashoffset 0.5s ease;
 }
 
 .lineTop {
-  stroke-dasharray: 40 40;
   stroke-dashoffset: 25;
 }
 
 .lineBottom {
-  stroke-dasharray: 40 40;
   stroke-dashoffset: 60;
 }
 
-.lineMid {
-  stroke-dasharray: 40 40;
-}
-
+/* Checkbox Interaction States */
 .hamburger .checkbox:checked + svg .line {
-  stroke: #000000;
+  stroke: #000;
 }
 
 .hamburger .checkbox:checked + svg .lineTop {
-  stroke-dashoffset: 0;
-  transform-origin: left;
-  transform: rotateZ(45deg) translate(-7px, -5px);
+  transform: rotate(45deg) translate(-7px, -5px);
 }
 
 .hamburger .checkbox:checked + svg .lineMid {
@@ -96,10 +92,9 @@ header {
 }
 
 .hamburger .checkbox:checked + svg .lineBottom {
-  stroke-dashoffset: 0;
-  transform-origin: left;
-  transform: rotateZ(-45deg) translate(-5px, 5px);
+  transform: rotate(-45deg) translate(-5px, 5px);
 }
+
 
 
 .nav-menu {
@@ -154,10 +149,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 5em;
+  width: 80%;
+  min-width: 20em;
+  max-width:40em ;
 }
 .center-header {
   display: flex;
-  
   justify-content: center;
   
 }
@@ -185,11 +183,11 @@ ul {
   display: flex;
   align-items: center;  
   justify-content: start;
-  margin-top: 100px;
-  margin-left: 150px;
-  height: 75%;
-  font-size: 40px;
+  min-height: 100vh;
+  font-size: clamp(36px, 4vw, 100px);
+  min-width: 95%;
   word-spacing: 8px;
+  
 }
 
 .begging {
@@ -202,22 +200,23 @@ ul {
 
 .main-intro {
   display: flex;
-  align-items: center;
-  margin-right: 20px;
-  margin-left: 120px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
 }
 
 .wording {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  
 }
 
 .name {
-  display: flex;
-  align-items:center;
+  
   color: white;
-  font-size: 45px;
+  font-size: clamp(35px, 4vw, 60px);
+  min-width: 15rem;
+  max-width: 536px;
 }
 
 .description {
@@ -236,7 +235,7 @@ ul {
 }
 
 .description-word{
-  width: 725px;
+  max-width: 725px;
   margin-bottom: 65px;
 }
 
@@ -251,8 +250,6 @@ ul {
   font-size: 27px;
   font-weight: 60;
   color: white;
-  margin-top: 16px;
-  margin-left: -780px;
   padding-left: 11px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -278,20 +275,20 @@ ul {
   background-color: rgb(0, 0, 0);
 }
 
-.filler{
-  display: block;
-  margin-bottom: 150px;
-}
+
 .third-section {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap ;
+  justify-content: space-evenly;
 }
 
 .custom-vertical{
   width: 2px;
-  height: 85%px;
+  height: 85% px;
   border: none;
   background-color:#45ED9C;
+  margin-right:2em ;
+  margin-left: 2em;
 }
 .proof-text {
   font-size: 90px;
@@ -350,6 +347,7 @@ ul {
   font-size: 90px;
   margin-bottom: 0;
   color: #45ED9C;
+  
 }
 
 .reach-desc {
@@ -359,16 +357,18 @@ ul {
 }
 
 #section4 {
+  padding: 0em;
   background-color: #45ED9C;
 }
 
 .footer{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 70%;
-  height: 70%;
+  min-width: 100%;
+  min-height: 75vh ;
 }
 
 li{
@@ -379,6 +379,7 @@ li{
 .contact-list{
   display: flex;
   flex-direction: column;
+  min-width: 250px;
 
   .reach-anchor{
     text-decoration: none;
@@ -399,6 +400,7 @@ li{
 .resume-footer{
   display: flex;
   flex-direction: column;
+  min-width: 250px;
 
   .anchor{
     text-decoration: none;
@@ -410,7 +412,7 @@ li{
 
 .custom-line{
   width: 85%;
-  margin-left: 7.5%;
+  margin-left: 7%;
   height: 2px;
   border: none;
   background-color: black;
@@ -418,9 +420,12 @@ li{
 
 .handles{
   display:flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  height: 29%;
-  align-items: center;
+  min-height: 25vh;
+  align-content: center;
+  
+  
 }
 
 .handle-social{
@@ -428,7 +433,7 @@ li{
   color: black;
   font-weight: bold;
   font-size: 22px;
-  margin-left: 10px;
+  
 }
 
 .my-name{
@@ -436,211 +441,18 @@ li{
   color: black;
 }
 
-
-
-
-
-
-
-@media (max-width: 480px) {
-  header {
-    width: 94%;
-    height: 70px;      margin: 0;
-    margin-top: 30px;
-    border-radius: 35px;    }
-
-  .center-header{
-    margin: 0;
-  }
-
-  .hamburger {
-    margin-right: 30px;
-
-    width: 25px;
-  }
-
-  .lineTop{
-    stroke-dasharray: 39 35;
-    stroke-dashoffset: 26;
-  }
-  .lineMid{
-    stroke-dasharray: 25 20;
-  }
-
-  .lineBottom{
-    stroke-dasharray: 60 0;
-    stroke-dashoffset: 61;
-  }
-
-  .nav-menu {
-   margin-top: -71px;
-   width: 200px;
-   margin-left: -145px;
-   font-size: 50px;
-   
-    
-  }
-  .nav-menu ul{
-    margin-top: 35px;
-    line-height: 50px;
-  }
-  .hamburger .checkbox:checked ~ .nav-menu {
-    
-    padding: 20px; 
-  }
-
-  .nav-menu ul {
-    flex-direction: column;
-    
-  }
-
-  .nav-link{
-    margin-left: 15px;
-  }
-
-  .nav-menu li {
-    margin-bottom: 20px;    }
-
-  .nav-menu a {
-    font-size: 28px;    }
-
-  .intro {
-    margin: 20px;
-    margin-top: 140px;
-    font-size: 45px;
-    width: 95%;
-    line-height: 115px;
-  }
-
-  .main-intro {
-    flex-direction: column;
-    align-items: center;
+@media (max-width: 795px){
+  .custom-vertical{
+    height: 2px;
+    width: 85%;
+    margin-top: 1em;
+    margin-bottom: 1em;
     margin-right: 0;
     margin-left: 0;
-  }
 
-  .wording {
-    margin-left: 0;
-    align-items:center ;
-    text-align: center;    }
-
-  .name {
-    font-size: 37px;
-    text-align: left;
-    width: 90;
-  }
-
-  .description {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 30px;      text-align: left;
-    width: 100%;
-  }
-  .read-more{
-    display: inline;
-  }
-
-  .description-word{
-    width: 95%;
-    margin-bottom:50px ;
-  }
-  .picture-and-button{
-    margin-left: 0;
-    justify-content: space-between;
-    align-items: center;
-    width: 95%;
-  }
-
+}
   .contact-button{
     display: none;
-    margin-left: 0;
-    font-size: 17px;
-    width: 156px;
-    height: 52px;
-    padding: 3px;
-    justify-content: space-evenly;
-  }
-  .arrow{
-    margin-left: 11px;
-    font-size: 22px;
   }
 
-  .show-work-button,
-  .reach-out-button {
-    font-size: 28px;      padding: 10px 20px;  
-    .arrow{
-      font-size: 35px;
-    }
-  }
-
-  .profile-pic {
-    margin-bottom: 20px; 
-     }
-  
-  .filler{
-    margin-top: 33px;
-    margin-bottom: 20px;
-  }
-
-  .third-section{
-    flex-direction: column;
-    align-items: start;
-    width: 90%;
-    margin-left: 20px;
-    justify-content: space-evenly;
-  }
-  
-  .custom-vertical{
-    width: 98%;
-    height: 2px;
-    margin-top: 50px;
-    margin-bottom: 30px;
-  }
-
-  .proof-text {
-    font-size: 80px;    }
-
-  .desc {
-    font-size: 35px;      line-height: 50px;
-  }
-
-  .separator {
-    height: 50%;    }
-
-  .reach-text {
-    font-size: 80px;    }
-
-  .reach-desc {
-    font-size: 35px;
-    line-height: 50px;
-  }
-
-  .footer {
-    width: 100%;      flex-direction: column;      align-items: flex-start;
-    margin-left: px;
-  }
-
-  .contact-footer{
-    margin-left: 23px;
-  }
-
-  .resume-footer{
-    margin-left: 23px;
-  }
-  
-  .custom-line {
-    width: 90%;      margin-left: 5%;    }
-
-  .handles {
-    flex-direction: column;      align-items: flex-start;
-  }
-
-  .handle-social {
-    font-size: 28px;      margin: 5px 0;      margin-left: 23px;
-  }
-  .my-name{
-    margin-left: 23px;
-    font-size: 25px;
-  }
 }
