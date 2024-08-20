@@ -260,6 +260,10 @@ ul {
   border-color: #45ED9C;
 }
 
+.picture {
+  
+  
+}
 
 .profile-pic {
   max-width: 300px;
@@ -442,6 +446,18 @@ li{
   color: black;
 }
 
+@media (max-width: 795px){
+  .custom-vertical{
+    height: 2px;
+    width: 85%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: 0;
+    margin-left: 0;
+
+}
+
+}
 
 @media (max-width: 754px){
   .main-intro{
