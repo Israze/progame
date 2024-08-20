@@ -1,6 +1,5 @@
 html, body {
   margin: 0;
-  
   background-color: black;
   scroll-behavior: smooth;
 }
@@ -9,12 +8,13 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} 
 
 
 .section {
   min-height: 100vh;
   padding-left:2rem;
+  
   padding-right: 2rem;
 }
 
@@ -71,7 +71,7 @@ header {
 }
 
 .lineTop {
-  stroke-dashoffset: 25;
+  stroke-dashoffset: 25;  
 }
 
 .lineBottom {
@@ -200,7 +200,7 @@ ul {
 
 .main-intro {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-items: flex-start;
   justify-content: space-around;
 }
@@ -223,7 +223,8 @@ ul {
   color: white;
   margin-top: 25px;
   margin-bottom:15px;
-  font-size: 28px;
+  /* font-size: 24px; */
+  font-size:clamp(24px, 3vw , 30px);
   font-weight: bold;
   word-spacing: 5px;
   
@@ -237,6 +238,7 @@ ul {
 .description-word{
   max-width: 725px;
   margin-bottom: 65px;
+  min-width: 312px;
 }
 
 .role {
@@ -258,15 +260,10 @@ ul {
   border-color: #45ED9C;
 }
 
-.picture-and-button {
-  display: flex;
-  flex-direction: column;
-  margin-left: 55px;
-  
-}
 
 .profile-pic {
-  width: 300px;
+  max-width: 300px;
+  min-width: 250px;
   background-color: gray;
   border-radius: 300px;
 }
@@ -291,14 +288,13 @@ ul {
   margin-left: 2em;
 }
 .proof-text {
-  font-size: 90px;
-  
+  font-size: clamp(80px, 9vw, 100px);
   margin-bottom: 0;
   color: #45ED9C;
 }
 
 .desc {
-  font-size: 30px;
+  font-size: clamp(27px, 5vw, 32px);
   color: white;
   margin-top: 0;
 }
@@ -307,14 +303,14 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 27px;
+  font-size: clamp(22px,3vw, 27px);
   font-weight: 60;
   color: white;
   margin-top: 13px;
   padding-left: 11px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right: 30px;
+  padding-top: 0.5em;
+  padding-bottom: 0.4em;
+  padding-right: 0.5em;
   background-color: black;
   border-color: #45ED9C;
 }
@@ -325,34 +321,34 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 27px;
+  font-size: clamp(22px,3vw, 27px);
   font-weight: 60;
   color: white;
   margin-top: 13px;
   padding-left: 11px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right: 30px;
+  padding-top: 0.5em;
+  padding-bottom: 0.4em;
+  padding-right: 0.5em;
   background-color: black;
   border-color: #45ED9C;
 }
-
 .arrow{
   margin-left: 17px;
-  font-size: 40px;
+  font-size: clamp(35px, 4vw, 40px);
   font-weight: lighter;
 }
 
 .reach-text {
-  font-size: 90px;
+  font-size: clamp(80px, 9vw, 100px);
   margin-bottom: 0;
   color: #45ED9C;
+  min-width: 278px;
   
 }
 
 .reach-desc {
+  font-size: clamp(27px, 5vw, 32px);
   color: white;
-  font-size: 30px;
   margin-top: 0;
 }
 
@@ -368,7 +364,7 @@ ul {
   justify-content: space-around;
   align-items: center;
   min-width: 100%;
-  min-height: 75vh ;
+  min-height: 90vh ;
 }
 
 li{
@@ -422,10 +418,15 @@ li{
   display:flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  min-height: 25vh;
+  min-height: 10vh;
+  
   align-content: center;
   
   
+}
+
+.socials{
+  word-spacing: 1.1em;
 }
 
 .handle-social{
@@ -441,18 +442,38 @@ li{
   color: black;
 }
 
-@media (max-width: 795px){
-  .custom-vertical{
-    height: 2px;
-    width: 85%;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-right: 0;
-    margin-left: 0;
 
-}
-  .contact-button{
-    display: none;
+@media (max-width: 754px){
+  .main-intro{
+    flex-wrap: wrap;
   }
 
+  .contact-button{
+    display: none;
+}
+}
+
+
+
+@media (max-width: 345px){
+  .intro{
+    font-size: 27px;
+    margin-top: 30px;
+      }
+
+  .name{
+    font-size: 33px;
+  }
+
+  .reach-text{
+    font-size: 65px;
+  }
+
+  .proof-text{
+    font-size: 70px;
+  }
+
+  .description{
+    font-size: 26px;
+  }
 }
