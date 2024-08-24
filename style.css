@@ -200,7 +200,6 @@ ul {
 
 .main-intro {
   display: flex;
-  /* flex-wrap: wrap; */
   align-items: flex-start;
   justify-content: space-around;
 }
@@ -208,11 +207,9 @@ ul {
 .wording {
   display: flex;
   flex-direction: column;
-  
 }
 
 .name {
-  
   color: white;
   font-size: clamp(35px, 4vw, 60px);
   min-width: 15rem;
@@ -222,43 +219,84 @@ ul {
 .description {
   color: white;
   margin-top: 25px;
-  margin-bottom:15px;
-  /* font-size: 24px; */
-  font-size:clamp(24px, 3vw , 30px);
+  margin-bottom: 15px;
+  font-size: clamp(24px, 3vw, 30px);
   font-weight: bold;
   word-spacing: 5px;
-  
-
-  .read-more{
-    color: #45ED9C;
-    text-decoration: none;
-  }
 }
 
-.description-word{
+.read-more {
+  color: #45ED9C;
+  text-decoration: none;
+}
+
+.description-word {
   max-width: 725px;
   margin-bottom: 65px;
   min-width: 312px;
 }
 
+/* Self-Writing Text Animation for .role */
 .role {
   color: #45ED9C;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #45ED9C; /* Cursor color */
+  animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
 }
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: #45ED9C; }
+}
+
 
 .contact-button {
   display: flex;
+  cursor: pointer;
   justify-content: flex-end;
   align-items: center;
   font-size: 27px;
-  font-weight: 60;
+  font-weight: 600;
   color: white;
   padding-left: 11px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-right: 30px;
   background-color: black;
-  border-color: #45ED9C;
+  border: 2px solid #45ED9C;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s ease, background-color 0.4s ease; /* Added background-color for smoother effect */
 }
+
+.contact-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #45ED9C;
+  z-index: -1;
+  transition: left 0.4s ease;
+}
+
+.contact-button:hover::before {
+  left: 0;
+}
+
+.contact-button:hover {
+  color: black;
+}
+
 
 .picture {
   
@@ -305,10 +343,11 @@ ul {
 
 .show-work-button {
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
-  font-size: clamp(22px,3vw, 27px);
-  font-weight: 60;
+  font-size: clamp(22px, 3vw, 27px);
+  font-weight: 600; /* Corrected to 600 for bold text */
   color: white;
   margin-top: 13px;
   padding-left: 11px;
@@ -316,17 +355,43 @@ ul {
   padding-bottom: 0.4em;
   padding-right: 0.5em;
   background-color: black;
-  border-color: #45ED9C;
+  border: 2px solid #45ED9C;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s ease, background-color 0.4s ease;
 }
+
+.show-work-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #45ED9C;
+  z-index: -1;
+  transition: left 0.4s ease;
+}
+
+.show-work-button:hover::before {
+  left: 0;
+}
+
+.show-work-button:hover {
+  color: black; /* Smooth text color transition on hover */
+}
+
 
 
 
 .reach-out-button {
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
-  font-size: clamp(22px,3vw, 27px);
-  font-weight: 60;
+  font-size: clamp(22px, 3vw, 27px);
+  font-weight: 600; /* Corrected to 600 for bold text */
   color: white;
   margin-top: 13px;
   padding-left: 11px;
@@ -334,13 +399,44 @@ ul {
   padding-bottom: 0.4em;
   padding-right: 0.5em;
   background-color: black;
-  border-color: #45ED9C;
+  border: 2px solid #45ED9C;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s ease, background-color 0.4s ease;
 }
-.arrow{
+
+.reach-out-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #45ED9C;
+  z-index: -1;
+  transition: left 0.4s ease;
+}
+
+.reach-out-button:hover::before {
+  left: 0;
+}
+
+.reach-out-button:hover {
+  color: black; /* Smooth text color transition on hover */
+}
+
+.arrow {
   margin-left: 17px;
   font-size: clamp(35px, 4vw, 40px);
   font-weight: lighter;
+  transition: transform 0.4s ease; /* Smooth transition for the arrow */
 }
+
+.reach-out-button:hover .arrow {
+  transform: translateX(5px); /* Moves the arrow slightly to the right on hover */
+}
+
 
 .reach-text {
   font-size: clamp(80px, 9vw, 100px);
@@ -493,3 +589,4 @@ li{
     font-size: 26px;
   }
 }
+
