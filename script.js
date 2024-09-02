@@ -42,43 +42,8 @@ document.addEventListener('click', function(event) {
 // href routing
 
 document.getElementById('project-button').addEventListener('click', function() {
-    window.location.href = 'projects.html';
+    window.location.href = '  projects.html';
   });
 
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const roleElement = document.querySelector('.role');
-    const roles = ["Web Developer", "Software Engineer", "AI Enthusiast"]; // Array of roles
-    const typingSpeed = 50; // Faster typing speed for smoothness
-    const erasingSpeed = 30; // Faster erasing speed for smoothness
-    const delayBetweenRoles = 1500; // Delay before starting to erase
-    const delayAfterErasing = 300; // Shorter delay after erasing before starting to type next role
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isErasing = false;
-
-    function typeAndErase() {
-        const currentRole = roles[roleIndex];
-
-        if (!isErasing && charIndex < currentRole.length) {
-            roleElement.textContent += currentRole.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeAndErase, typingSpeed);
-        } else if (isErasing && charIndex > 0) {
-            roleElement.textContent = currentRole.substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(typeAndErase, erasingSpeed);
-        } else if (!isErasing && charIndex === currentRole.length) {
-            setTimeout(() => {
-                isErasing = true;
-                setTimeout(typeAndErase, erasingSpeed);
-            }, delayBetweenRoles);
-        } else if (isErasing && charIndex === 0) {
-            isErasing = false;
-            roleIndex = (roleIndex + 1) % roles.length;
-            setTimeout(typeAndErase, delayAfterErasing);
-        }
-    }
-
-    typeAndErase(); // Start the typing/erasing loop
-});
+  

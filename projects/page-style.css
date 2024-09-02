@@ -1,0 +1,40 @@
+body{
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+.routing{
+    color: #45ED9C ;
+    font-size: clamp(40px, 6vw, 90px);
+    margin-top: 0;
+}
+.navigate{
+    text-decoration: none;
+    color: #45ED9C;
+}
+
+.navigate:hover{
+    transition: 0.7s ease;
+    color: white;
+}
+
+
+
+.project-description{
+    max-width: 75 em;
+    font-size: clamp(15px, 1.4vw, 30px);
+}
+
+.sample-image{
+    width: 100%;
+    height: auto;
+    margin-top: 2em;
+    margin-bottom: 1.2em;    
+}
+
+
+.more-description{
+    max-width: 65em;
+    font-size: clamp(15px, 1.4vw, 30px);
+}
