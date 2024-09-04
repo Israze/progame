@@ -425,6 +425,64 @@ ul {
   transform: translateX(5px); /* Moves the arrow slightly to the right on hover */
 }
 
+/* Overlay styling */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup styling */
+.popup {
+  display: flex;
+  justify-content: space-around ;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  text-align: center;
+  min-width: 20em;
+}
+
+.options-ul{
+  line-height: 2.7em;
+}
+
+.options-li{
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+/* Close button styling */
+.close-popup-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.close-popup-btn:hover {
+  background-color: #c0392b;
+}
+
+
 
 .reach-text {
   font-size: clamp(80px, 9vw, 100px);
