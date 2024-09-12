@@ -1,0 +1,21 @@
+body{
+    background-color: black;
+    color: #fff;
+    padding: 5px;
+}
+
+
+.start{
+    font-size: 25px;
+    max-width: 70em;
+}
+
+.skills{
+    font-size: 25px;
+    max-width: 60em ;
+}
+
+.project-desc{
+    font-size: 25px;
+    max-width: 60em;
+}

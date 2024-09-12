@@ -18,12 +18,7 @@ reachOutButton.addEventListener('click', () => {
   popupOverlay.style.display = 'flex';
 });
 
-// Close the popup when the close button is clicked
-// closePopupBtn.addEventListener('click', () => {
-//   popupOverlay.style.display = 'none';
-// });
 
-// Close the popup when clicking outside the popup content
 popupOverlay.addEventListener('click', (event) => {
   if (event.target === popupOverlay) {
     popupOverlay.style.display = 'none';
